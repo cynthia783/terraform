@@ -4,6 +4,6 @@ installer aws cli
 
 installer terraform 
 
-installer ansible et creer le fichier inventory et le playbook pour l'installation de docker
+installer ansible et creer le fichier inventory " host.ini " et le playbook " installation.yml " pour l'installation de docker
 
-creer le script.sh pour l'installation de docker
+creer le script " script-docker.sh " pour l'installation de docker
