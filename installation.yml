@@ -1,0 +1,19 @@
+---
+- name: Installer Docker sur les Nodes
+  hosts: ec2
+  become: true
+  tasks:
+  - name: Copier le script d'installation
+    copy:
+      src: ~/terraform/docker/script-docker.sh
+      dest: /tmp/script-docker.sh
+      mode: '0755'
+
+  - name: Exécuter le script
+    command: /tmp/script-docker.sh
+    become: yes
+
+  - name: Supprimer le script
+    file:
+      path: /tmp/script-docker.sh
+      state: absent
