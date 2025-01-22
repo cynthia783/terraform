@@ -73,3 +73,8 @@ resource "aws_security_group" "m-group-de-secu" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_key_pair" "my_key" {
+  key_name   = "ssh-terraform"
+  public_key = file("${path.module}/ssh-terraform.pub")
+}
